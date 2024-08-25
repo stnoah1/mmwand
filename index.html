@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>DTI Clustering</title>
-  <meta name="description" content="Project page for Deep Transformation-Invariant Clustering.">
+  <meta name="description" content="Project page for Multi-Modal Representation Learning with Tactile Data.">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <meta charset="utf-8">
 
@@ -34,19 +34,20 @@
 
 <div class="container" style="text-align:center; padding:2rem 15px">
   <div class="row" style="text-align:center">
-    <h1>Deep Transformation-Invariant Clustering</h1>
-    <h4>NeurIPS 2020 (oral presentation)</h4>
+    <h1>Multi-Modal Representation Learning with Tactile Data</h1>
+    <h4>IROS 2024</h4>
   </div>
   <div class="row" style="text-align:center">
     <div class="col-xs-0 col-md-3"></div>
     <div class="col-xs-12 col-md-6">
       <h4>
-        <a href="https://imagine.enpc.fr/~monniert/"><nobr>Tom Monnier</nobr></a> &emsp;
-        <a href="https://imagine.enpc.fr/~groueixt/"><nobr>Thibault Groueix</nobr></a> &emsp;
-        <a href="https://imagine.enpc.fr/~aubrym/"><nobr>Mathieu Aubry</nobr></a>
+        <a href="https://hyung-gun.me"><nobr>Hyung-gun Chi</nobr></a> &emsp;
+        <a"><nobr>Jose Barreiros</nobr></a> &emsp;
+        <a><nobr>Jean Mercat</nobr></a>
+        <a><nobr>Karthik Ramani</nobr></a>
+        <a><nobr>Thomas Kollar</nobr></a>
       </h4>
-      LIGM, <nobr>&Eacute;cole des Ponts</nobr>, <nobr>Univ Gustave Eiffel</nobr>, CNRS,
-      <nobr>Marne-la-Vall&eacute;e, France</nobr>
+      Equal contribution <nobr>&Eacute;Purdue University</nobr>, <nobr>Toyota Research Institute</nobr>,
     </div>
     <div class="hidden-xs hidden-sm col-md-1" style="text-align:left; margin-left:0px; margin-right:0px">
       <a href="https://arxiv.org/pdf/2006.11132.pdf" style="color:inherit">
@@ -63,10 +64,10 @@
   <img src="resrc/teaser.jpg" alt="teaser.jpg" class="text-center" style="width: 100%; max-width: 1100px">
   <h3 style="text-align:center; padding-top:1rem">
     <a class="label label-info" href="https://arxiv.org/abs/2006.11132">Paper</a>
-    <a class="label label-info" href="https://github.com/monniert/dti-clustering">Code</a>
-    <a class="label label-info" href="https://www.youtube.com/embed/j20MBc1hWGQ">Video</a>
-    <a class="label label-info" href="resrc/dtic_long.pptx">Slides</a>
-    <a class="label label-info" href="resrc/ref.bib">BibTeX</a>
+<!--     <a class="label label-info" href="https://github.com/monniert/dti-clustering">Code</a> -->
+    <a class="label label-info" href="">Video</a>
+    <a class="label label-info" href="">Slides</a>
+    <a class="label label-info" href="">Datasets</a>
   </h3>
 </div>
 
@@ -74,21 +75,20 @@
   <h3>Abstract</h3>
   <hr/>
   <p>
-    Recent advances in image clustering typically focus on learning better deep 
-    representations. In contrast, we present an orthogonal approach that does not rely on 
-    abstract features but instead learns to <b>predict image transformations</b> and directly performs 
-    <b>clustering in pixel space</b>. This learning process naturally fits in the 
-    gradient-based training of K-means and Gaussian mixture model, without requiring any 
-    additional loss or hyper-parameters. It leads us to two new deep transformation-invariant
-    clustering frameworks, which <b>jointly learn prototypes and transformations</b>. More 
-    specifically, we use deep learning modules that enable us to resolve invariance to spatial, 
-    color and morphological transformations. Our approach is conceptually simple and comes with 
-    several advantages, including the possibility to easily adapt the desired invariance to the 
-    task and a <b>strong interpretability</b> of both cluster centers and assignments to clusters.  We 
-    demonstrate that our novel approach yields <b>competitive and highly promising results</b> on 
-    standard image clustering benchmarks. Finally, we showcase its robustness and the 
-    advantages of its improved interpretability by visualizing clustering results over real 
-    photograph collections.
+   Advancements in embodied language models like PALM-E and RT-2 have significantly enhanced 
+   language-conditioned robotic manipulation. However, these advances remain predominantly 
+   focused on vision and language, often overlooking the pivotal role of tactile feedback which 
+   is advantageous in contact-rich interactions. Our research introduces a novel approach that 
+   synergizes tactile information with vision and language. We present the Multi-Modal Wand 
+   (MMWand) dataset enriched with linguistic descriptions and tactile data. By integrating 
+   tactile feedback, we aim to bridge the divide between human linguistic understanding and 
+   robotic sensory interpretation. Our multi-modal representation model is trained on these 
+   datasets by employing the multi-modal embedding alignment principle from ImageBind which has 
+   shown promising results, emphasizing the potential of tactile data in robotic applications. 
+   The validation of our approach in downstream robotics tasks, such as texture-based object 
+   classification, cross-modality retrieval, and the dense reward function for visuomotor control, 
+   attests to its effectiveness. Our contributions underscore the importance of tactile feedback 
+   in multi-modal robotic learning and its potential to enhance robotic tasks. 
   </p>
 
   <h3>Video</h3>
@@ -192,7 +192,7 @@
            style="width:100%;max-width:850px;margin-top:1rem;padding-right:1.5rem;">
   </div>
 
-  <h3>Resources</h3>
+<!--   <h3>Resources</h3>
   <hr/>
   <div class="row" style="text-align: center">
     <div class="col-xs-0 col-lg-0"></div>
@@ -220,17 +220,17 @@
     If you find this work useful for your research, please cite:
     <div class="card">
       <div class="card-block">
-        <pre class="card-text clickselect">
-@inproceedings{monnier2020dticlustering,
-  title={{Deep Transformation-Invariant Clustering}},
-  author={Monnier, Tom and Groueix, Thibault and Aubry, Mathieu},
-  booktitle={NeurIPS},
-  year={2020},
+        <pre class="card-text clickselect"> -->
+@inproceedings{chi2024mmwand,
+  title={{Multi-Modal Representation Learning with Tactile Data}},
+  author={Chi, Hyung-gun and Barreiros, Jose and Mercat, Jean and Ramani, Karthik and Kollar, Thomas},
+  booktitle={IROS},
+  year={2024},
 }</pre>
       </div>
     </div>
 
-  <h3>Further information</h3>
+<!--   <h3>Further information</h3>
   <hr/>
   If you like this project, please check out other related works from our group:
   <h4>Follow-ups</h4>
@@ -256,9 +256,9 @@
         Surface Generation (CVPR 2018)</a>
     </li>
   </ul>
+ -->
 
-
-  <h3>Acknowledgements</h3>
+<!--   <h3>Acknowledgements</h3>
   <hr/>
   <p>
     This work was supported in part by <a href="https://enherit.enpc.fr/">ANR project EnHerit</a> ANR-17-CE23-0008,
@@ -267,7 +267,7 @@
     Ramamonjisoa, Vincent Lepetit, Elliot Vincent, Jean Ponce, William Peebles and Alexei Efros for inspiring 
     discussions and valuable feedback.
   </p>
-</div>
+</div> -->
 
 <div class="container" style="padding-top:3rem; padding-bottom:3rem">
   <p style="text-align:center">
