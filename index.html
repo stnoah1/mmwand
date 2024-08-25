@@ -1,7 +1,7 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>DTI Clustering</title>
+  <title>MMWwand (IROS2024)</title>
   <meta name="description" content="Project page for Multi-Modal Representation Learning with Tactile Data.">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <meta charset="utf-8">
@@ -39,32 +39,23 @@
   </div>
   <div class="row" style="text-align:center">
     <div class="col-xs-0 col-md-3"></div>
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-16 col-md-12">
       <h4>
-        <a href="https://hyung-gun.me"><nobr>Hyung-gun Chi</nobr></a> &emsp;
-        <a"><nobr>Jose Barreiros</nobr></a> &emsp;
-        <a><nobr>Jean Mercat</nobr></a>
-        <a><nobr>Karthik Ramani</nobr></a>
-        <a><nobr>Thomas Kollar</nobr></a>
+        <a href="https://hyung-gun.me"><nobr>Hyung-gun Chi</nobr></a><sup>*,1</sup> &emsp;
+        <span><nobr>Jose Barreiros</nobr></span><sup>*,2</sup> &emsp;
+        <span><nobr>Jean Mercat</nobr></span><sup>2</sup>&emsp;
+        <a href="https://engineering.purdue.edu/~ramani/wordpress/"><nobr>Karthik Ramani</nobr></a><sup>2</sup>&emsp;
+        <span><nobr>Thomas Kollar</nobr></span><sup>2</sup>&emsp;
       </h4>
-      Equal contribution <nobr>&Eacute;Purdue University</nobr>, <nobr>Toyota Research Institute</nobr>,
-    </div>
-    <div class="hidden-xs hidden-sm col-md-1" style="text-align:left; margin-left:0px; margin-right:0px">
-      <a href="https://arxiv.org/pdf/2006.11132.pdf" style="color:inherit">
-        <i class="fa fa-file-pdf-o fa-4x"></i></a> 
-    </div>
-    <div class="hidden-xs hidden-sm col-md-2" style="text-align:left; margin-left:0px;">
-      <a href="https://github.com/monniert/dti-clustering" style="color:inherit">
-        <i class="fa fa-github fa-4x"></i></a>
+       <sup>*</sup> Equal contribution, <nobr><sup>1</sup>Purdue University</nobr>, <nobr><sup>2</sup>Toyota Research Institute</nobr>
     </div>
   </div>
 </div>
 
 <div class="container" style="text-align:center; padding:1rem">
-  <img src="resrc/teaser.jpg" alt="teaser.jpg" class="text-center" style="width: 100%; max-width: 1100px">
+  <img src="resrc/concept.png" alt="concept.jpg" class="text-center" style="width: 60%; max-width: 1100px">
   <h3 style="text-align:center; padding-top:1rem">
     <a class="label label-info" href="https://arxiv.org/abs/2006.11132">Paper</a>
-<!--     <a class="label label-info" href="https://github.com/monniert/dti-clustering">Code</a> -->
     <a class="label label-info" href="">Video</a>
     <a class="label label-info" href="">Slides</a>
     <a class="label label-info" href="">Datasets</a>
@@ -75,152 +66,158 @@
   <h3>Abstract</h3>
   <hr/>
   <p>
-   Advancements in embodied language models like PALM-E and RT-2 have significantly enhanced 
-   language-conditioned robotic manipulation. However, these advances remain predominantly 
-   focused on vision and language, often overlooking the pivotal role of tactile feedback which 
-   is advantageous in contact-rich interactions. Our research introduces a novel approach that 
-   synergizes tactile information with vision and language. We present the Multi-Modal Wand 
-   (MMWand) dataset enriched with linguistic descriptions and tactile data. By integrating 
-   tactile feedback, we aim to bridge the divide between human linguistic understanding and 
-   robotic sensory interpretation. Our multi-modal representation model is trained on these 
-   datasets by employing the multi-modal embedding alignment principle from ImageBind which has 
-   shown promising results, emphasizing the potential of tactile data in robotic applications. 
-   The validation of our approach in downstream robotics tasks, such as texture-based object 
-   classification, cross-modality retrieval, and the dense reward function for visuomotor control, 
-   attests to its effectiveness. Our contributions underscore the importance of tactile feedback 
-   in multi-modal robotic learning and its potential to enhance robotic tasks. 
+   Advancements in embodied language models like PALM-E and RT-2 have significantly enhanced
+   language-conditioned robotic manipulation. However, these advances remain predominantly
+   focused on vision and language, often overlooking the pivotal role of tactile feedback which
+   is advantageous in contact-rich interactions. Our research introduces a novel approach that
+   synergizes tactile information with vision and language. We present the Multi-Modal Wand
+   (MMWand) dataset enriched with linguistic descriptions and tactile data. By integrating
+   tactile feedback, we aim to bridge the divide between human linguistic understanding and
+   robotic sensory interpretation. Our multi-modal representation model is trained on these
+   datasets by employing the multi-modal embedding alignment principle from ImageBind which has
+   shown promising results, emphasizing the potential of tactile data in robotic applications.
+   The validation of our approach in downstream robotics tasks, such as texture-based object
+   classification, cross-modality retrieval, and the dense reward function for visuomotor control,
+   attests to its effectiveness. Our contributions underscore the importance of tactile feedback
+   in multi-modal robotic learning and its potential to enhance robotic tasks.
   </p>
 
-  <h3>Video</h3>
+  <h3>MMWand Dataset</h3>
   <hr/>
-  <div class="row" style="text-align:center">
-    <div class="col-xs-6 text-center">
-      <h4><u>Short presentation</u> (3min)</h4>
-      <div class="embed-responsive embed-responsive-16by9" style="text-align:center">
-        <iframe class="embed-responsive-item text-center" src="https://www.youtube.com/embed/j20MBc1hWGQ" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          style="width:100%; clip-path:inset(1px 1px);" allowfullscreen></iframe>
+  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4><u>MMWand Design</u></h4>
+      <p>For data collection, we installed three third-person view cameras. The MMWand is outfitted with tactile and force sensors,
+      as well as an ego-view camera. actile information is gleaned using a GelSight Mini, a widely used visuo-tactile sensor that
+      uses a camera looking at a deformable gel illuminated with structured light. A strain gauge load cell
+      (5kg, 4-wire, Adafruit, ID: 4541) is integrated to record the total normal force exerted when the MMWand pushes against an object.
+      Additionally, the wand includes a point-of-view RGB camera (Vitade webcam with an LED light ring, Full HD 1080P) located over
+      the wand tip. The experimental bench is covered with a chroma-key green screen and includes three additional cameras that
+      provide overhead and side views of the interaction.</p>
+      <div class="col-xs-6">
+        <img src="resrc/mmwand.png" alt="dti.png" class="text-center" style="width: 100%; max-width: 500px">
       </div>
-    </div>
+      <div class="col-xs-6">
+        <img src="resrc/mmwand_detail.jpg" alt="deep_tsf.png" class="text-center" style="width: 90%; max-width: 500px; margin-top:
+        10px">
+      </div>
+  </div>
+  <div class="row" style="text-align: center; padding-left:2rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4><u>Dataset Samples</u></h4>
+      <p>The dataset comprises multi-view visual images, tactile images, and force values. Crucially, it offers language descriptions,
+        which can facilitate the use of large language models for robotics tasks.</p>
+      <img src="resrc/mmwand_sample.png" alt="" class="text-center" style="width: 100%; max-width: 1200px;">
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo1.mp4" type="video/mp4" /></video>
+      </div>
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo2.mp4" type="video/mp4" /></video>
+      </div>
 
-    <div class="col-xs-6 text-center">
-      <h4><u>Long presentation</u> (11min)</h4>
-      <div class="embed-responsive embed-responsive-16by9" style="text-align:center">
-        <iframe class="embed-responsive-item text-center" src="https://www.youtube.com/embed/xhLUOh5PKBA" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          style="width:100%; clip-path:inset(1px 1px);" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <h3>Approach</h3>
-  <hr/>
-  <div class="row" style="text-align: center">
-    <div class="col-xs-6">
-      <h4 style="margin-right: 20%"><u>DTI framework</u></h4>
-    </div>
-    <div class="col-xs-6">
-      <h4><u>Deep transformation module 
-          <img src="http://latex.codecogs.com/svg.latex?\mathcal{T}_{f_{k}}" alt="T_f_k" border="0"/></u></h4>
-    </div>
-  </div>
-  <div class="row" style="text-align: center">
-    <div class="col-xs-6">
-      <img src="resrc/dti.png" alt="dti.png" class="text-center" style="width: 100%; max-width: 900px">
-    </div>
-    <div class="col-xs-6">
-      <img src="resrc/deep_tsf.png" alt="deep_tsf.png" class="text-center" style="width: 90%; max-width: 900px; margin-top:
-      10px">
-    </div>
-  </div>
-  <div class="row" style="text-align: center">
-    <div class="col-xs-6">
-      <div style="width: 90%; max-width: 900px; padding-top:10px">
-      <p>Given a sample <img src="http://latex.codecogs.com/svg.latex?x_i" alt="x_i" border="0"/> and prototypes 
-      <img src="http://latex.codecogs.com/svg.latex?c_1" alt="c_1" border="0"/> and 
-      <img src="http://latex.codecogs.com/svg.latex?c_2" alt="c_2" border="0"/>, standard clustering such as K-means 
-      assigns the sample to the closest prototype. Our DTI clustering first aligns prototypes to the sample using a
-      family of parametric transformations - here rotations - then picks the prototype whose alignment yields the 
-      smallest distance.</p>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <div style="width: 100%; max-width: 900px; padding-top:10px">
-        <p>We predict alignment with deep learning. Given an image 
-      <img src="http://latex.codecogs.com/svg.latex?x_i" alt="x_i" border="0"/>, each deep parameter predictor 
-      <img src="http://latex.codecogs.com/svg.latex?f_k" alt="f_k" border="0"/> predicts 
-      parameters for a sequence of transformations - here affine, morphological and thin plate spline transformations -
-      to align the prototype <img src="http://latex.codecogs.com/svg.latex?c_k" alt="c_k" border="0"/>
-      to the query image <img src="http://latex.codecogs.com/svg.latex?x_i" alt="x_i" border="0"/>.</p>
-      </div>
-    </div>
-  </div>
-
-  <h3>Results</h3>
-  <hr/>
-  <div class="row" style="text-align: center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
-    <h4><u>Standard image clustering benchmarks</u></h4>
-      <img src="resrc/prototypes.jpg" alt="prototypes.jpg" class="text-center" style="width: 100%; max-width: 1000px;">
   </div>
   <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
-    <h4><u>MegaDepth locations</u></h4>
-      <img src="resrc/megadepth.jpg" alt="megadepth.jpg" class="text-center" style="width: 100%; max-width: 1000px;
-      margin-top: 5px">
-  </div>
-  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
-    <h4><u>MegaDepth Florence: detailed results</u></h4>
-      <p>We show the 6 best qualitatives prototypes learned using DTI clustering
-      with 20 clusters for Florence location in MegaDepth dataset. For each cluster, we show the 20 samples leading to
-      minimal reconstruction errors among all the samples in the cluster as well as corresponding transformed 
-      prototypes. Note how it manages to model real image transformations like illumination variations and viewpoint
-      changes.</p>
-      <img src="resrc/firenze.jpg" alt="firenze.jpg" class="text-center" style="width: 100%; max-width: 1100px">
-  </div>
-  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem;padding-bottom:1rem;">
-    <h4><u>Instagram hashtags</u></h4>
-      <p>We show the 5 best qualitatives prototypes learned using DTI clustering
-      with 40 clusters for different Instagram photo collections. Each collection corresponds to a large unfiltered set
-      of Instagram images (from 10k to 15k) associated to a particular hashtag. Identifying visual trends or iconic
-      poses in this case is very challenging as most of the images are noise. You can visualize the type of collected 
-      images directly in Instagram: 
-      <a href=https://www.instagram.com/explore/tags/balitemple/>#balitemple</a>,
-      <a href=https://www.instagram.com/explore/tags/santaphoto/>#santaphoto</a>,
-      <a href=https://www.instagram.com/explore/tags/trevifountain/>#trevifountain</a>,
-      <a href=https://www.instagram.com/explore/tags/weddingkiss/>#weddingkiss</a>,
-      <a href=https://www.instagram.com/explore/tags/yogahandstand/>#yogahandstand</a>.</p>
-      <img src="resrc/instagram.jpg" alt="instagram.jpg" class="text-center"
-           style="width:100%;max-width:850px;margin-top:1rem;padding-right:1.5rem;">
+    <h4><u>Comparison with Other Tactile Datasets</u></h4>
+      <p>MMWand is the only dataset offering a language description of objects while simultaneously encompassing high-quality touch
+        acquisitions and images. In addition, it includes acquisition from different viewpoints and force measurements. These features
+        are important assets for multi-modal representation learning and are needed to improve contact-rich applications in
+        robotic manipulation.</p>
+      <img src="resrc/comparison.png" alt="dti.png" class="text-center" style="width: 100%; max-width: 11000px">
   </div>
 
-<!--   <h3>Resources</h3>
+  <!-- <h3>Approach</h3> -->
+  <!-- <hr/> -->
+  <!-- <div class="row" style="text-align: center"> -->
+  <!--   <div class="col-xs-6"> -->
+  <!--     <h4 style="margin-right: 20%"><u>DTI framework</u></h4> -->
+  <!--   </div> -->
+  <!--   <div class="col-xs-6"> -->
+  <!--     <h4><u>Deep transformation module -->
+  <!--         <img src="http://latex.codecogs.com/svg.latex?\mathcal{T}_{f_{k}}" alt="T_f_k" border="0"/></u></h4> -->
+  <!--   </div> -->
+  <!-- </div> -->
+  <!-- <div class="row" style="text-align: center"> -->
+  <!--   <div class="col-xs-6"> -->
+  <!--     <img src="resrc/dti.png" alt="dti.png" class="text-center" style="width: 100%; max-width: 900px"> -->
+  <!--   </div> -->
+  <!--   <div class="col-xs-6"> -->
+  <!--     <img src="resrc/deep_tsf.png" alt="deep_tsf.png" class="text-center" style="width: 90%; max-width: 900px; margin-top: -->
+  <!--     10px"> -->
+  <!--   </div> -->
+  <!-- </div> -->
+  <!-- <div class="row" style="text-align: center"> -->
+  <!--   <div class="col-xs-6"> -->
+  <!--     <div style="width: 90%; max-width: 900px; padding-top:10px"> -->
+  <!--     <p>Given a sample <img src="http://latex.codecogs.com/svg.latex?x_i" alt="x_i" border="0"/> and prototypes -->
+  <!--     <img src="http://latex.codecogs.com/svg.latex?c_1" alt="c_1" border="0"/> and -->
+  <!--     <img src="http://latex.codecogs.com/svg.latex?c_2" alt="c_2" border="0"/>, standard clustering such as K-means -->
+  <!--     assigns the sample to the closest prototype. Our DTI clustering first aligns prototypes to the sample using a -->
+  <!--     family of parametric transformations - here rotations - then picks the prototype whose alignment yields the -->
+  <!--     smallest distance.</p> -->
+  <!--     </div> -->
+  <!--   </div> -->
+  <!--   <div class="col-xs-6"> -->
+  <!--     <div style="width: 100%; max-width: 900px; padding-top:10px"> -->
+  <!--       <p>We predict alignment with deep learning. Given an image -->
+  <!--     <img src="http://latex.codecogs.com/svg.latex?x_i" alt="x_i" border="0"/>, each deep parameter predictor -->
+  <!--     <img src="http://latex.codecogs.com/svg.latex?f_k" alt="f_k" border="0"/> predicts -->
+  <!--     parameters for a sequence of transformations - here affine, morphological and thin plate spline transformations - -->
+  <!--     to align the prototype <img src="http://latex.codecogs.com/svg.latex?c_k" alt="c_k" border="0"/> -->
+  <!--     to the query image <img src="http://latex.codecogs.com/svg.latex?x_i" alt="x_i" border="0"/>.</p> -->
+  <!--     </div> -->
+  <!--   </div> -->
+  <!-- </div> -->
+
+
+  <h3>Applications</h3>
   <hr/>
-  <div class="row" style="text-align: center">
-    <div class="col-xs-0 col-lg-0"></div>
-    <div class="col-xs-4 col-lg-4">
-      <h4>Paper</h4>
-      <a href="https://arxiv.org/abs/2006.11132" style="color:inherit">
-        <img src="resrc/paper.jpg" alt="paper.jpg" class="text-center" style="max-width:70%; border:0.15em solid;
-        border-radius:0.5em;"></a>
-    </div>
-    <div class="col-xs-4 col-lg-4">
-      <h4>Code</h4>
-      <a href="https://github.com/monniert/dti-clustering" style="color:inherit;">
-        <img src="resrc/github_repo.png" alt="github_repo.png" class="text-center"
-             style="max-width:70%; border:0.15em solid;border-radius:0.5em;"></a>
-    </div>
-    <div class="col-xs-4 col-lg-4">
-      <h4>Slides</h4>
-      <a href="dtic_long.pptx" style="color:inherit;">
-        <img src="resrc/slides.png" alt="slides.png" class="text-center"
-             style="max-width:70%; border:0.15em solid;border-radius:0.5em;"></a>
-    </div>
-    <div class="col-xs-0 col-lg-0"></div>
+  <p>To highlight the benefits of our work in robotic applications, we measure the embedding distance from a current state to a goal state.
+    To obtain embeddings, we trained ImageBind with different modalities (tactile, image, language)</p>
+  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4><u>Embedding Distance (Real-Robot Videos)</u></h4>
+    <p>We execute a pick-and-place task using a Franka Research 3 robotic arm. We equipped the gripper with a 3D-printed mount that holds the tactile sensor.
+    Additionally, the scene is recorded with an external camera. We define the last frame of the sequence as the target and compute the embedding distances
+    of each frame with the target frame. The embedding distances were compared using only image, only tactile, and both image and tactile. The tactile input
+    curve includes a step-like transition because the tactile image remains unchanged until the robot arm makes contact with an object. In contrast, the
+    image input curve is smoother but displays noticeable “peaks”, which translates into a less informative cost function. By integrating both modalities,
+    we achieve improved curves with fewer peaks and an earlier drop in the embedding distance. This feature enhances its applicability as a dense cost for
+    visuomotor control since it encompasses the act of grasping and provides an earlier indication that the trajectory is correctly solving the task.</p>
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo5.mp4" type="video/mp4" /></video>
+      </div>
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo6.mp4" type="video/mp4" /></video>
+      </div>
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo7.mp4" type="video/mp4" /></video>
+      </div>
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo8.mp4" type="video/mp4" /></video>
+      </div>
   </div>
-    <h4 style="padding-top:0.5em">BibTeX</h4>
-    If you find this work useful for your research, please cite:
+  <div class="row" style="text-align:center; padding-left:1rem; padding-right:1rem; padding-bottom:1rem;">
+    <h4><u>Embedding Distance Comparison between Language and Tactile Image</u></h4>
+      <p>We delve deeper by comparing the embedding distance plots, this time substituting the target tactile image with the object's texture described in
+      language form. Owing to our model's training on aligning various modalities within the same embedding space, it is observed that even when the target
+      tactile image is replaced with a textual texture description, the embedding distance continues to decrease following the tactile sensor''s contact
+      with the object.</p>
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo3.mp4" type="video/mp4" /></video>
+      </div>
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo4.mp4" type="video/mp4" /></video>
+      </div>
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo9.mp4" type="video/mp4" /></video>
+      </div>
+      <div class="col-xs-6">
+        <video controls style="width: 100%; max-width: 1200px;"><source src="resrc/demo10.mp4" type="video/mp4" /></video>
+      </div>
+  </div>
+
+<h3>BibTex</h3>
+  <p>If you find this work useful for your research, please cite:</p>
     <div class="card">
       <div class="card-block">
-        <pre class="card-text clickselect"> -->
+        <pre class="card-text clickselect">
 @inproceedings{chi2024mmwand,
   title={{Multi-Modal Representation Learning with Tactile Data}},
   author={Chi, Hyung-gun and Barreiros, Jose and Mercat, Jean and Ramani, Karthik and Kollar, Thomas},
@@ -230,45 +227,6 @@
       </div>
     </div>
 
-<!--   <h3>Further information</h3>
-  <hr/>
-  If you like this project, please check out other related works from our group:
-  <h4>Follow-ups</h4>
-  <ul>
-    <li>
-      <a href="https://arxiv.org/abs/2104.14575">Monnier et al. - Unsupervised Layered Image Decomposition into Object
-        Prototypes (arXiv 2021)</a>
-    </li>
-  </ul>
-
-  <h4>Previous works on deep transformations</h4>
-  <ul>
-    <li>
-      <a href="https://arxiv.org/abs/1908.04725">Deprelle et al. - Learning elementary structures for 3D shape
-        generation and matching (NeurIPS 2019)</a>
-    </li>
-    <li>
-      <a href="https://arxiv.org/abs/1806.05228">Groueix et al. - 3D-CODED: 3D Correspondences by Deep Deformation (ECCV
-        2018)</a>
-    </li>
-    <li>
-      <a href="https://arxiv.org/abs/1802.05384">Groueix et al. - AtlasNet: A Papier-Mache Approach to Learning 3D
-        Surface Generation (CVPR 2018)</a>
-    </li>
-  </ul>
- -->
-
-<!--   <h3>Acknowledgements</h3>
-  <hr/>
-  <p>
-    This work was supported in part by <a href="https://enherit.enpc.fr/">ANR project EnHerit</a> ANR-17-CE23-0008,
-    project Rapid Tabasco, gifts  from  Adobe and HPC resources from GENCI-IDRIS (Grant 2020-AD011011697). We thank 
-    Bryan Russell, Vladimir Kim, Matthew Fisher, Fran&#231;ois Darmon, Simon Roburin, David Picard, Michael 
-    Ramamonjisoa, Vincent Lepetit, Elliot Vincent, Jean Ponce, William Peebles and Alexei Efros for inspiring 
-    discussions and valuable feedback.
-  </p>
-</div> -->
-
 <div class="container" style="padding-top:3rem; padding-bottom:3rem">
   <p style="text-align:center">
   &#169; This webpage was in part inspired from this
@@ -277,4 +235,4 @@
 </div>
 
 </body>
-</html> 
+</html>
